@@ -1,0 +1,531 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Seyidpsalmist</title>
+<!--css-->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/index.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'css/swipebox.css' %}" type="text/css" media="all" />
+<link rel="icon" type="text/css" href="{% static 'images/sdclogo.jpeg' %}">
+
+<!-- Custom css -->
+<link href="{% static 'nf/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!--css-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Nigeria Music, African music, Juju afro, Gospel music">
+<meta name="description" content="SeyiDpsalmist Music - Recreating african music...">
+<meta name="author" content="Samuel Damilare, SODTECHNOLOGY">
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+<!--js-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--js-->
+<!--webfonts-->
+<link href='//fonts.googleapis.com/css?family=Nova+Round' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!--webfonts-->
+<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+ <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+  <!--Include jQuery & Filterizr-->
+	<script src="{% static 'js/jquery.filterizr.js' %}"></script>
+	<script src="{% static 'js/controls.js' %}"></script>
+		<!--Kick off Filterizr-->
+			<script type="text/javascript">
+				$(function() {
+					//Initialize filterizr with default options
+				$('.filtr-container').filterizr();
+			});
+		</script>
+<!--gallery-->
+<!--startsmothscrolling-->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+ <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+	<script src="{% static 'js/jquery.swipebox.min.js' %}"></script> 
+	<script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+	</script>
+<!--swipe box js-->
+</head>
+<body>
+	<!--header-->
+	<div class="header" id="home">
+			<div class="header-top">
+				<div class="container">
+					<div class="social-icons">
+						<a href="https://www.facebook.com/seyi.dpsalmist"><i class="icon"></i></a>
+						<a href="#"><i class="icon1"></i></a>
+						<a href="https://www.insatgram.com/Seyi_dpsalmist"><i class="icon3"></i></a>
+					</div>
+					<div class="detail">
+						<ul>
+							<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i> +234 808-070-9644</li>
+							<li><i class="glyphicon glyphicon-time" aria-hidden="true"></i> Mon-Sat 8:00 am to 7:00 pm </li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		<div class="container">
+			<div class="header-bottom">
+				<div class=" logo ">
+					<h1>
+						<a href="{% url 'index' %}"><img style="height: 30px; width: 30px;" src="{% static 'images/sdclogo.jpeg' %}">SeyiDpsalmist</a>
+					</h1>
+				</div>
+				<div class=" top-nav">
+					<span class="menu"><img src="{% static 'images/nav.png' %}" alt=""/></span>
+					<ul class="nav1">
+						<li><a href="{% url 'index' %}" class="active scroll">Home</a></li>
+						<li><a href="#about" class="scroll">About</a></li>
+						<li><a href="#services" class="scroll">Services</a></li>
+						<li><a href="#albums" class="scroll">Albums </a></li>
+						<li><a href="#tracks" class="scroll">Tracks</a></li>
+						<li><a href="#biography" class="scroll">Biography</a></li>
+						<li><a href="#contact" class="scroll">Contact</a></li>
+					</ul>	
+					<!--script-for-menu-->
+					 <script>
+					   $( "span.menu" ).click(function() {
+						 $( "ul.nav1" ).slideToggle( 300, function() {
+						 // Animation complete.
+						  });
+						 });
+					</script>
+					<!--script-for-menu-->
+				</div>
+				<div class="clearfix"></div>	
+			</div>	
+		</div>
+	</div>
+	<!--header-->
+	<!--banner-->
+		<div class="banner-section">
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<div class="slider-info">
+								<img style="height:300px;" src="{% static 'images/seyidpsalmistbgpic.jpeg' %}" class="img-responsive" alt="bgpic1">
+							</div>
+						</li>
+						<li>
+							<div class="slider-info">
+								<img style="height:300px;" src="{% static 'images/kosi_pic.jpg' %}" class="img-responsive" alt="bgpic2">
+							</div>
+						</li>
+						<li>
+							<div class="slider-info">
+								<img style="height:300px;" src="{% static 'images/tWCM.jpg' %}" class="img-responsive" alt="bgpic3">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+				<!--FlexSlider-->
+				<script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
+					<script type="text/javascript">
+						$(function(){
+							SyntaxHighlighter.all();
+						});
+						$(window).load(function(){
+						$('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+						});
+						});
+					</script>
+				<!--FlexSlider-->
+				<!--slider-->
+		</div>
+	<!--banner-->
+		<!--welcome-->
+			<div class="content">
+				<div class="welcome-w3ls" id ="about">
+					<div class="container">
+						<h2 class="tittle"> Welcome</h2>
+							<div class="border"></div>
+						<span>Welcome to my website. I am popular known as Seyi Dpsalmist. Scroll down to learn more of my services and how I can be of help to you. I and my team strive to deliver the very best possible work that’s available out there, at any time. That’s how we set ourselves apart from the competition.</span>
+					</div>
+					<div class="wel-grids">
+						<div class="col-md-3 wel-grid">
+							<img style="height: ;" src="{% static 'images/TAR_0104.JPG' %}" title="Designer_girl" class="img-responsive" alt=""/>
+						</div>
+						<div class="col-md-6 wel-grid1">
+							<div class="wel-left">
+<!-- 								<h4>15+</h4> -->
+								<h5>Events</h5>
+								<p>We cover various events such as wedding ceremonies, birthday celebrations, church functions, burial ceremonies in and outside Lagos, Nigeria.</p>
+							</div>
+							<div class="wel-left">
+<!-- 								<h4>20+</h4> -->
+								<h5>Speakers</h5>
+								<p>You can hire me as a master of ceremony (MC) to anchor your event. I also offer services such as public speaking.</p>
+							</div>
+							<div class="wel-left">
+<!-- 								<h4>50+</h4> -->
+								<h5>MC</h5>
+								<p>You can hire me as a master of ceremony (MC) to anchor your event. I also offer services such as public speaking.</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="col-md-3 wel-grid">
+							<img src="{% static 'images/TAR_0167.JPG' %}" title="Designer_girl" class="img-responsive" alt=""/>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+
+			<!--Our Services-->
+				<div class="service-w3l" id="services">
+					<div class="container">
+						<h3 class="tittle"> Our Services</h3>
+						<div class="border"></div>
+						<div class="service-grids">
+							<div class="col-md-4 ser-grid">
+								<div class="ser-top">
+									<div class="con hvr-shutter-in-horizontal">
+										<i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+									</div>
+									<h4 style="color: skyblue;">Birthday Party</h4>
+									<p>We are available for birthday parties.</p>
+								</div>
+							</div>
+							<div class="col-md-4 ser-grid">
+								<div class="ser-top">
+									<div class="con hvr-shutter-in-horizontal">
+										<i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+									</div>
+									<h4 style="color: skyblue;">Burial Ceremonies</h4>
+									<p>We are available for burial ceremonies.</p>
+								</div>
+							</div>
+							<div class="col-md-4 ser-grid">
+								<div class="ser-top">
+									<div class="con hvr-shutter-in-horizontal">
+										<i class="glyphicon glyphicon-picture" aria-hidden="true"></i>
+									</div>
+									<h4 style="color: skyblue;">Wedding Ceremony</h4>
+									<p>We make your wedding unique and outstanding.</p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="service-grids">
+							<div class="col-md-4 ser-grid">
+								<div class="ser-top">
+									<div class="con hvr-shutter-in-horizontal">
+										<i class="glyphicon glyphicon-headphones" aria-hidden="true"></i>
+									</div>
+									<h4 style="color: skyblue;">Concerts</h4>
+									<p>Our services also include concerts.</p>
+								</div>
+							</div>
+							<div class="col-md-4 ser-grid">
+								<div class="ser-top">
+									<div class="con hvr-shutter-in-horizontal">
+										<i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+									</div>
+									<h4 style="color: skyblue;">Church Events</h4>
+									<p>You can call us for church events also.</p>
+								</div>
+							</div>
+							<div class="col-md-4 ser-grid">
+								<div class="ser-top">
+									<div class="con hvr-shutter-in-horizontal">
+										<i class="glyphicon glyphicon-picture" aria-hidden="true"></i>
+									</div>
+									<h4 style="color: skyblue;">Other Events</h4>
+									<p>W are available for events of all kinds.</p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Albums -->
+				<div class="album-agile" id="albums">
+					<div class="container">
+						<h3 class="tittle">Our Albums</h3>
+						<div class="border"></div>
+
+						<div class="filtr-container">
+							{% for img in gallery %}
+							<div class=" col-md-4 filtr-item" data-category="1, 5" data-sort="Busy streets">
+								<a href="{{ img.mypictures.url }}" class="b-link-stripe b-animate-go  swipebox">
+									<div class="max-gal-effect slow-zoom horizontal">
+										<div class="img-box"><img src="{{ img.mypictures.url }}"  class="img-responsive" alt=" " /></div>
+											<div class="max-text-box">
+												<div class="max-gal-text">
+													<h4>{{ img.pic_name }}</h4>
+												</div>
+											</div>
+									</div>
+								</a>
+							</div>
+							{% endfor %}	
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+
+				<!-- TRACKS -->
+				    <!-- music_area  -->
+       <!-- music_area end  -->
+				<div class="artists-agileits" id="tracks">
+					<div class="container">
+					<h3 class="tittle">Tracks</h3>
+					<div class="border"></div>
+						<div class="slider">
+							<div class="callbacks_container">
+								<div class="row align-items-center justify-content-center mb-20">
+                {% for track in page_obj %}
+                <div class="col-xl-10">
+                    <div class="row align-items-center">
+                        <div class="col-xl-9 col-md-9">
+                            <div class="music_field">
+                                <div class="thumb">
+                                    <img src="{{ track.pic.url }}" alt="album pic" style="height: 150px; width: 150px; border-radius: 50%">
+                                </div>
+                                     <div class="audio_name">
+                                        <div class="name">
+                                            <h2>{{ track.name }}</h2>
+                                            <p>{{ track.date_created|date:'F d, Y' }}</p>
+                                        </div>
+                                        <audio preload="auto" controls>
+                                            <source src="{{ track.track.url }}" type="audio/mpeg">
+                                        </audio>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-3">
+                            <div class="music_btn">
+                                <a style="background-color: skyblue; color: #fff; border-radius: 20%" href="{{ track.track.url }}" target="blank" class="btn btn-outline-primary boxed-btn3">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- Pagination -->
+                <div class="pagination" style="border:0px solid red">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a class = "btn btn-outline-info mb-4" href="?page=1">&laquo; first</a>
+                            <a class = "btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+
+                        <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                        </span>
+
+                        {% if page_obj.has_next %}
+                            <a class = "btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">next</a>
+                            <a class = "btn btn-outline-info mb-4" href="?page={{ page_obj.pagination.num_pages }}">last &raquo;</a>
+                        {% endif %}                        
+                    </span>
+                </div>
+            </div> 
+								 <ul class="rslides" id="slider">
+									<li>	 
+										<div class="caption">
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal3"><img src="{% static 'images/a3.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>Anderson</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1"><img src="{% static 'images/a1.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>John Thomson</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal2"><img src="{% static 'images/a2.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>Mary Doe</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</li>
+									 <li>	 
+										<div class="caption">
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal4"><img src="{% static 'images/a4.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>Eva Adamson</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal5"><img src="{% static 'images/a5.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>Tompson</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal3"><img src="{% static 'images/a3.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>Anderson</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</li>
+									<li>
+										<div class="caption">
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1"><img src="{% static 'images/a1.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>John Thomson</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal3"><img src="{% static 'images/a3.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>Anderson</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="col-md-4 cap-left">
+												<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal5"><img src="{% static 'images/a5.jpg' %}" class="img-responsive" alt=""/></a>
+												<h4>Tompson</h4>
+												<h5>Director, ABC</h5>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</li>
+								</ul> 
+								<!-- end -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Biography-->
+					<div class="biography-w3agile" id="biography">
+						<div class="container">
+							<h3 class="tittle1">Biography</h3>
+							<div class="border1"></div>
+							<div class="biography-grids">
+								<div class="col-md-6 biography-grid">
+								<img src="{% static 'images/s.jpg' %}" class="img-responsive" alt=""/>
+								</div>
+								<div class="col-md-6 biography-grid">
+									<h4>Who are we?</h4>
+									<p>Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing metus sit amet. In eu justo a felis faucibus ornare vel id metus. Sed hendrerit enim non justo posuere placerat. Phasellus eget purus vel mauris tincidunt tincidunt. Sed et nibh tortor faucibus pellentesque facilisis.</p>
+									<ul>
+										<li>Nam convallis non eros curabitur.</li>
+										<li> Donec vehicula suscipit oasselus.</li>
+										<li>Accumasan mauris tellus feugiat.</li>
+										<li>Sed hendrerit enim non justo.</li>
+										<li>Nam convallis non eros curabitur.</li>
+										<li>Nam convallis non eros curabitur.</li>
+										<li> Donec vehicula suscipit oasselus.</li>
+										<li>Accumasan mauris tellus feugiat.</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				<!--Biography-->
+			</div>
+			<div class="contact">
+				<div class="container">
+					<h3 class="tittle">Contact</h3>
+					<div class="border"></div>
+				</div>
+				<div class="maps">
+         			<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31714.398282324735!2d3.3349976904446414!3d6.483666791163991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s19%20Ifelodun%20Street%2C%20Off%20stadium%2C%20Surulere%2C%20Lagos!5e0!3m2!1sen!2sng!4v1580266448754!5m2!1sen!2sng" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      			</div>
+			</div>
+<!-- //get-in -->
+<!-- contact-us -->
+			<div class="contact-us">
+				<div class="container">
+					<div class="contact-grids">
+						<div class="col-md-4 contact-grid text-center">
+							<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+							<p><a href="mail-to:example@mail.com">Email: seyison48@gmail.com</a></p>
+						</div>
+						<div class="col-md-4 contact-grid text-center">
+							<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+							<p>19, Ifelodun street, Off Stadium Road, Surulere, Lagos, Nigeria</p>
+						</div>
+						<div class="col-md-4 contact-grid text-center">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+							<p>Telephone : +234 808-070-9644</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div id="contact" class="contact-info">
+					{% if messages %}
+                		{% for message in messages %}
+                			<div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                		{% endfor %}
+                	{% endif %}
+                  	<h3 class="tittle1">Get In Touch</h3>
+			          <form action="" method="POST">
+			          	{% csrf_token %}
+			            {{  form.as_table}}
+			            <div class="form-group">
+			              <input type="submit" class="btn btn-primary btn-lg" id="submit" name="submit" value="Send Message">
+			            </div>
+			          </form>
+					</div>
+				</div>
+			</div>
+
+		<!--footer-->
+			<div class="copy-section">
+				<div class="container">
+					<div class="footer-top">
+						<p>&copy; 2021 Seyidpsalmist. All rights reserved</p>
+					</div>
+					<a href="#home" class="scroll top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+				</div>
+			</div>
+	<!--footer-->
+
+
+
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            facebook: "100001482268038", // Facebook page ID
+            whatsapp: "+234 808-070-9644", // WhatsApp number
+            call_to_action: "Message us", // Call to action
+            button_color: "#129BF4", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "whatsapp,facebook", // Order of buttons
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+</body>
+</html>
